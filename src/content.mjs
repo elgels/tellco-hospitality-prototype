@@ -21,11 +21,11 @@ export const properties = [
  ['06','Portfolio Programs','Multi-site hospitality and real-estate groups that need repeatable assessments, standardized solution packages, monitoring processes, service procedures, and commercial models that can scale across regions.','property-portfolios']
 ];
 export const partners = [
- ['Hospitality sustainability ecosystem','Sustainable tourism, responsible property development, and resource-efficiency ecosystem'],
- ['Energy access and infrastructure ecosystem','Clean-energy, distributed-infrastructure, and development-finance ecosystem'],
- ['Health, comfort, and wellbeing ecosystem','Healthy buildings, occupant comfort, water, cooling, and resilient-services ecosystem'],
- ['Infrastructure and engineering ecosystem','Design, engineering, EPC delivery, and project-governance ecosystem'],
+ ['Hospitality sustainability','Sustainable tourism, responsible property development, and resource-efficiency ecosystem'],
+ ['Energy access and infrastructure','Clean-energy, distributed-infrastructure, and development-finance ecosystem'],
+ ['Health, comfort, and wellbeing','Healthy buildings, occupant comfort, water, cooling, and resilient-services ecosystem'],
+ ['Infrastructure and engineering','Design, engineering, EPC delivery, and project-governance ecosystem'],
  ['Procurement and delivery channel','Equipment sourcing, logistics, installation coordination, and local-delivery channel'],
- ['Smart-property visibility ecosystem','Monitoring, controls, connected assets, and energy-data ecosystem']
+ ['Smart-property visibility','Monitoring, controls, connected assets, and energy-data ecosystem']
 ];
 export const navigation=[['Home','index'],['Services','services'],['Solutions','solutions'],['Property Types','property-types'],['Partners','partners'],['Insights','insights'],['Contact','contact']];
