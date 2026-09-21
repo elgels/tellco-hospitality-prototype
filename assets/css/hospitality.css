@@ -1,11 +1,13 @@
 /* Hospitality content only. Corporate header/footer styling lives in tellco-shared.css. */
-.hospitality-bar{background:#fff;border-bottom:1px solid #e3e5e7}
-.hospitality-bar>.container{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-block:18px}
+.hospitality-header .nav-shell{width:calc(100% - 80px);max-width:1800px;gap:24px}
+.hospitality-header .brand{transform:none}
+.hospitality-header .hospitality-brand{flex-shrink:0}
+.hospitality-header .primary-nav a[aria-current]{color:var(--red)}
+@media(min-width:1351px){.hospitality-header{--identity-shift:calc(20px - (100cqw - min(100cqw - 80px,1800px))/2)}.hospitality-header .brand{transform:translateX(var(--identity-shift))}.hospitality-header .hospitality-brand{margin-left:-18px;transform:translate(calc(-16px + var(--identity-shift)),4px)}.hospitality-header .primary-nav{margin-right:40px}}
 .hospitality-brand{font-weight:700;font-size:16px;color:#202c38}
 .hospitality-brand span{display:block;text-transform:uppercase;font-weight:400;font-size:10px;letter-spacing:1.6px;margin-top:5px;color:#647079}
-.hospitality-bar nav{display:flex;gap:22px;flex-wrap:wrap}
-.hospitality-bar nav a{font-size:13px;padding:6px 0;border-bottom:2px solid transparent}
-.hospitality-bar nav a[aria-current],.hospitality-bar nav a:hover{color:var(--red);border-color:var(--red)}
+@media(max-width:1350px){.hospitality-header .nav-shell{width:calc(100% - 34px);gap:18px}.hospitality-header .mobile-toggle{margin-left:auto}}
+@media(max-width:600px){.hospitality-header .nav-shell{width:calc(100% - 24px);gap:12px}.hospitality-header .brand-logo{width:110px}.hospitality-header .hospitality-brand{font-size:12px;flex-shrink:1}.hospitality-header .hospitality-brand span{font-size:8px;letter-spacing:.7px;max-width:150px;line-height:1.5}.hospitality-header .mobile-toggle{flex-shrink:0}}
 .hospitality-site{color:#243039;line-height:1.65}
 .hospitality-site h1,.hospitality-site h2,.hospitality-site h3{line-height:1.15;margin:0 0 22px;color:#182630}
 .hospitality-site h1{font-size:clamp(36px,3.65vw,54px);letter-spacing:-1.5px;font-weight:700}

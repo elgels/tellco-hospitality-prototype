@@ -38,7 +38,7 @@ The one-time `scripts/import-shell.mjs` is retained for provenance; do not rerun
 
 ## What was reused and adapted
 
-Corporate header/footer markup, logo, colors, icons and responsive menu came from TellCoExperience's local checkout. Corporate links use absolute TellCoExperience URLs; the new second navigation row is hospitality-specific. The footer's Solutions link points to the existing #solutions anchor.
+Corporate header/footer markup, logo, colors, icons and responsive menu came from TellCoExperience's local checkout. The header now combines the logo, hospitality identity and seven hospitality page links in one row, as requested. Header navigation is generated from src/content.mjs; the separate hospitality navigation row has been removed. Footer links still use absolute corporate URLs, including the existing #solutions anchor.
 
 The corporate mobile-menu breakpoint was raised from 1130px to 1350px in this separate project because the inherited full desktop navigation overflowed at intermediate widths. Its visual treatment and labels are unchanged.
 
