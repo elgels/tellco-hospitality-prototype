@@ -1,0 +1,12 @@
+{
+  "name": "tellco-hospitality-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/preview.mjs",
+    "test": "node scripts/check.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
