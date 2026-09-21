@@ -2,7 +2,18 @@ import fs from 'node:fs';
 import {platforms,models,properties,partners,navigation} from '../src/content.mjs';
 const esc=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
 const header=fs.readFileSync('src/partials/header.html','utf8'), footer=fs.readFileSync('src/partials/footer.html','utf8');
-const cards=(items,label,klass='')=>'<div class="h-grid '+klass+'">'+items.map(([tag,title,body,slug])=>'<article class="h-card"><p class="eyebrow">'+esc(tag)+'</p><h3>'+esc(title)+'</h3><p>'+esc(body)+'</p><a class="text-link" href="'+slug+'.html">'+label+'<span class="visually-hidden">: '+esc(title)+'</span> <span aria-hidden="true">→</span></a></article>').join('')+'</div>';
+const platformImages={
+ 'platform-solar-storage':['solar-storage.png','Portable solar energy system with solar panels'],
+ 'platform-lugano':['lugano.webp','TellCoSOL mobile power trailer'],
+ 'platform-lausanne':['lausanne.png','TellCo Europe Lausanne Smart Energy Hub'],
+ 'platform-geneva-tellcolux':['geneva-tellcolux.png','LED outdoor lighting fixture'],
+ 'platform-davos':['davos.jpg','Operators monitoring energy and infrastructure dashboards'],
+ 'platform-service-hub':['service-hubs.jpg','Technicians assembling and inspecting solar equipment']
+};
+const cards=(items,label,klass='')=>'<div class="h-grid '+klass+'">'+items.map(([tag,title,body,slug])=>{
+ const image=platformImages[slug];
+ return '<article class="h-card">'+(image?'<img class="platform-card-image" src="assets/images/platforms/'+image[0]+'" alt="'+esc(image[1])+'" width="740" height="380" loading="lazy">':'')+'<p class="eyebrow">'+esc(tag)+'</p><h3>'+esc(title)+'</h3><p>'+esc(body)+'</p><a class="text-link" href="'+slug+'.html">'+label+'<span class="visually-hidden">: '+esc(title)+'</span> <span aria-hidden="true">→</span></a></article>';
+}).join('')+'</div>';
 const pageHeader=slug=>header.replace('{{navigation}}',navigation.map(([label,url])=>'<a href="'+url+'.html"'+(slug===url?' aria-current="page"':'')+'>'+label+'</a>').join(''));
 function page(title,slug,content){
 return '<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>'+esc(title)+' | TellCo Hospitality</title><meta name="description" content="TellCo Europe hospitality and real-estate clean-energy infrastructure prototype."><link rel="stylesheet" href="assets/css/tellco-shared.css"><link rel="stylesheet" href="assets/css/hospitality.css"></head><body><a class="skip-link" href="#main">Skip to content</a>'+pageHeader(slug)+'<main id="main" class="hospitality-site'+(slug==='index'?'':' template-page')+'">'+content+'</main>'+footer+'<script src="assets/js/site.js"></script></body></html>\n';
